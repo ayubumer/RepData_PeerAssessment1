@@ -1,8 +1,11 @@
+
+```{r }
 ---
 title: "Reproducible Research Week 2 Course Project 1"
 author: "Mohammad Umer Ayub"
 date: "October 9, 2017"
-output: md_document
+output: github_document
+
 ---
 
 ```{r setup, include=FALSE}
@@ -109,7 +112,10 @@ x_data_new$day_type <- as.factor(x_data_new$day)
 ```{r}
 X_data_agg_new_weekend_fact <- aggregate(steps ~ interval + day_type, x_data_new, mean)
 library(ggplot2)
-qplot(interval,steps,data = X_data_agg_new_weekend_fact, type = 'l',  geom=c("line"),xlab = "Interval", 
+h<-qplot(interval,steps,data = X_data_agg_new_weekend_fact, type = 'l',  geom=c("line"),xlab = "Interval", 
       ylab = "Number of steps", main = "") + facet_wrap(~ day_type, ncol = 1)
+print(h)
 ```
 ##Yes, Activity paterns are different Weekdays and Weekends
+```
+
